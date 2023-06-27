@@ -125,3 +125,11 @@ create table tbl_itens_nfce(
 	aliq_ipi numeric(14,2),
 	desconto numeric(14,2)	
 );
+
+create table tab_cidades(
+	codigo_estado integer,
+	sigla_estado varchar(2),
+	nome_uf varchar(120),
+	codigo_cidade varchar(7) primary key,
+	nome_cidade varchar(120)
+);
