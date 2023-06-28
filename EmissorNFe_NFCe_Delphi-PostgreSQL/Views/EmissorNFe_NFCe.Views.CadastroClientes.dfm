@@ -22,20 +22,15 @@ object frm_CadClientes: Tfrm_CadClientes
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = 528
-    ExplicitTop = 128
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object pgc_Principal: TPageControl
       Left = 0
       Top = 0
       Width = 982
       Height = 721
-      ActivePage = tbs_Cadastro
+      ActivePage = tbs_Pesquisa
       Align = alClient
       Images = ImageList1
       TabOrder = 0
-      ExplicitWidth = 1252
       object tbs_Pesquisa: TTabSheet
         Caption = 'Pesquisa'
         ImageIndex = -1
@@ -80,8 +75,6 @@ object frm_CadClientes: Tfrm_CadClientes
           Font.Style = []
           ParentFont = False
           TabOrder = 1
-          ExplicitTop = 418
-          ExplicitWidth = 831
           object Panel3: TPanel
             Left = 176
             Top = 0
@@ -201,7 +194,6 @@ object frm_CadClientes: Tfrm_CadClientes
             Padding.Right = 3
             Padding.Bottom = 3
             TabOrder = 4
-            ExplicitLeft = 1156
             object btnFechar: TButton
               Left = 3
               Top = 3
@@ -232,8 +224,6 @@ object frm_CadClientes: Tfrm_CadClientes
           Font.Style = []
           ParentFont = False
           TabOrder = 2
-          ExplicitTop = 8
-          ExplicitWidth = 1244
           object Label1: TLabel
             Left = 7
             Top = 4
@@ -268,7 +258,6 @@ object frm_CadClientes: Tfrm_CadClientes
             Padding.Right = 3
             Padding.Bottom = 3
             TabOrder = 1
-            ExplicitLeft = 1156
             object btnPesquisar: TButton
               Left = 0
               Top = 3
@@ -282,6 +271,7 @@ object frm_CadClientes: Tfrm_CadClientes
               Images = ImageList1
               TabOrder = 0
               OnClick = btnPesquisarClick
+              ExplicitTop = 0
             end
           end
         end
@@ -483,8 +473,6 @@ object frm_CadClientes: Tfrm_CadClientes
           Font.Style = []
           ParentFont = False
           TabOrder = 10
-          ExplicitTop = 418
-          ExplicitWidth = 831
           object Panel2: TPanel
             Left = 796
             Top = 0
@@ -497,7 +485,6 @@ object frm_CadClientes: Tfrm_CadClientes
             Padding.Right = 3
             Padding.Bottom = 3
             TabOrder = 0
-            ExplicitLeft = 1066
             object btnSalvar: TButton
               Left = 6
               Top = 3
@@ -525,7 +512,6 @@ object frm_CadClientes: Tfrm_CadClientes
             Padding.Right = 3
             Padding.Bottom = 3
             TabOrder = 1
-            ExplicitLeft = 1163
             object btnCancelar: TButton
               Left = 3
               Top = 3

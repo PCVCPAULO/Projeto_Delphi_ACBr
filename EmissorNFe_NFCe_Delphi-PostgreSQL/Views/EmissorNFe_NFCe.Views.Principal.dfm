@@ -12,6 +12,8 @@ object frm_Principal: Tfrm_Principal
   Font.Style = []
   Menu = MainMenu1
   Position = poScreenCenter
+  WindowState = wsMaximized
+  OnShow = FormShow
   TextHeight = 15
   object MainMenu1: TMainMenu
     Left = 232
@@ -25,8 +27,9 @@ object frm_Principal: Tfrm_Principal
       object Produtos1: TMenuItem
         Caption = 'Produtos'
       end
-      object ransportadoras1: TMenuItem
+      object Transportadoras1: TMenuItem
         Caption = 'Transportadoras'
+        OnClick = Transportadoras1Click
       end
     end
     object Emisso1: TMenuItem
@@ -42,5 +45,34 @@ object frm_Principal: Tfrm_Principal
       Caption = 'Sair'
       OnClick = Sair1Click
     end
+  end
+  object ACBrNFe1: TACBrNFe
+    Configuracoes.Geral.SSLLib = libNone
+    Configuracoes.Geral.SSLCryptLib = cryNone
+    Configuracoes.Geral.SSLHttpLib = httpNone
+    Configuracoes.Geral.SSLXmlSignLib = xsNone
+    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
+    Configuracoes.Arquivos.OrdenacaoPath = <>
+    Configuracoes.WebServices.UF = 'SP'
+    Configuracoes.WebServices.AguardarConsultaRet = 0
+    Configuracoes.WebServices.QuebradeLinha = '|'
+    Configuracoes.RespTec.IdCSRT = 0
+    Left = 656
+    Top = 64
+  end
+  object ACBrNFCe1: TACBrNFe
+    Configuracoes.Geral.SSLLib = libNone
+    Configuracoes.Geral.SSLCryptLib = cryNone
+    Configuracoes.Geral.SSLHttpLib = httpNone
+    Configuracoes.Geral.SSLXmlSignLib = xsNone
+    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
+    Configuracoes.Geral.ModeloDF = moNFCe
+    Configuracoes.Arquivos.OrdenacaoPath = <>
+    Configuracoes.WebServices.UF = 'SP'
+    Configuracoes.WebServices.AguardarConsultaRet = 0
+    Configuracoes.WebServices.QuebradeLinha = '|'
+    Configuracoes.RespTec.IdCSRT = 0
+    Left = 784
+    Top = 64
   end
 end

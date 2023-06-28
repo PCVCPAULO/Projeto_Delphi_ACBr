@@ -33,6 +33,21 @@ type
     qry_Cidadesnome_uf: TZUnicodeStringField;
     qry_Cidadescodigo_cidade: TZUnicodeStringField;
     qry_Cidadesnome_cidade: TZUnicodeStringField;
+    qry_Transport: TZQuery;
+    qry_Transportcodigo: TZIntegerField;
+    qry_Transportnome: TZUnicodeStringField;
+    qry_Transportpessoa: TZUnicodeStringField;
+    qry_Transportcnpj_cpf: TZUnicodeStringField;
+    qry_Transportie_rg: TZUnicodeStringField;
+    qry_Transportendereco: TZUnicodeStringField;
+    qry_Transportnumero: TZUnicodeStringField;
+    qry_Transportbairro: TZUnicodeStringField;
+    qry_Transportcomplemento: TZUnicodeStringField;
+    qry_Transportcep: TZUnicodeStringField;
+    qry_Transportcodigo_cidade: TZIntegerField;
+    qry_Transportnome_cidade: TZUnicodeStringField;
+    qry_Transportcodigo_uf: TZIntegerField;
+    qry_Transportnome_uf: TZUnicodeStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

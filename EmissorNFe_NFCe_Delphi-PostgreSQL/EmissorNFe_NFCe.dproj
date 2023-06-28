@@ -111,6 +111,14 @@
             <Form>frm_CadClientes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\EmissorNFe_NFCe.Views.CadTransportadora.pas">
+            <Form>frm_Transport</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\EmissorNFe.Views.Frm_SelecionarCertificado.pas">
+            <Form>frmSelecionarCertificado</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
