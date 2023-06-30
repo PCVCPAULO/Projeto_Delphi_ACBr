@@ -12,6 +12,7 @@ object frm_Transport: Tfrm_Transport
   Font.Style = []
   Position = poScreenCenter
   OnClose = FormClose
+  OnDestroy = FormDestroy
   OnShow = FormShow
   TextHeight = 28
   object pnl_Principal: TPanel
@@ -22,7 +23,6 @@ object frm_Transport: Tfrm_Transport
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = 8
     object pgc_Principal: TPageControl
       Left = 0
       Top = 0
@@ -76,7 +76,6 @@ object frm_Transport: Tfrm_Transport
           Font.Style = []
           ParentFont = False
           TabOrder = 1
-          ExplicitTop = 610
           object Panel3: TPanel
             Left = 176
             Top = 0
@@ -272,7 +271,6 @@ object frm_Transport: Tfrm_Transport
               Images = ImageList1
               TabOrder = 0
               OnClick = btnPesquisarClick
-              ExplicitTop = 4
             end
           end
         end

@@ -21,7 +21,6 @@ object dm_ConexaoPG: Tdm_ConexaoPG
   end
   object qry_Clientes: TZQuery
     Connection = ConexaoPG
-    Active = True
     SQL.Strings = (
       'select * from tab_clientes where 0 = 1')
     Params = <>
@@ -97,7 +96,6 @@ object dm_ConexaoPG: Tdm_ConexaoPG
   end
   object qry_Estados: TZQuery
     Connection = ConexaoPG
-    Active = True
     SQL.Strings = (
       'SELECT DISTINCT codigo_estado, sigla_estado FROM cidades'
       'ORDER BY sigla_estado')
@@ -114,7 +112,6 @@ object dm_ConexaoPG: Tdm_ConexaoPG
   end
   object qry_Cidades: TZQuery
     Connection = ConexaoPG
-    Active = True
     SQL.Strings = (
       'SELECT * FROM cidades where 1 = -1')
     Params = <>
@@ -143,7 +140,6 @@ object dm_ConexaoPG: Tdm_ConexaoPG
   end
   object qry_Transport: TZQuery
     Connection = ConexaoPG
-    Active = True
     SQL.Strings = (
       'select * from tab_transportadora where 0 = 1')
     Params = <>
@@ -214,6 +210,87 @@ object dm_ConexaoPG: Tdm_ConexaoPG
     object qry_Transportnome_uf: TZUnicodeStringField
       DisplayLabel = 'UF'
       FieldName = 'nome_uf'
+      Size = 2
+    end
+  end
+  object qry_Produtos: TZQuery
+    Connection = ConexaoPG
+    Active = True
+    SQL.Strings = (
+      'select * from tab_produtos where 0 = 1')
+    Params = <>
+    Left = 416
+    Top = 144
+    object qry_Produtoscodigo: TZIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'codigo'
+      Required = True
+    end
+    object qry_Produtosdescricao: TZUnicodeStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      FieldName = 'descricao'
+      Size = 100
+    end
+    object qry_Produtospreco: TZBCDField
+      DisplayLabel = 'Pre'#231'o'
+      FieldName = 'preco'
+      DisplayFormat = '#0.00'
+      Precision = 14
+      Size = 2
+    end
+    object qry_Produtosestoque: TZIntegerField
+      DisplayLabel = 'Estoque'
+      FieldName = 'estoque'
+    end
+    object qry_Produtoscst_icms: TZUnicodeStringField
+      DisplayLabel = 'CST ICMS'
+      FieldName = 'cst_icms'
+      Size = 3
+    end
+    object qry_Produtoscst_pis: TZUnicodeStringField
+      DisplayLabel = 'CST PIS'
+      FieldName = 'cst_pis'
+      Size = 3
+    end
+    object qry_Produtoscst_cofins: TZUnicodeStringField
+      DisplayLabel = 'CST COFINS'
+      FieldName = 'cst_cofins'
+      Size = 3
+    end
+    object qry_Produtoscst_ipi: TZUnicodeStringField
+      DisplayLabel = 'CST IPI'
+      FieldName = 'cst_ipi'
+      Size = 3
+    end
+    object qry_Produtosaliq_icms: TZBCDField
+      DisplayLabel = 'Aliq. ICMS'
+      FieldName = 'aliq_icms'
+      Precision = 14
+      Size = 2
+    end
+    object qry_Produtosaliq_pis: TZBCDField
+      DisplayLabel = 'Aliq. PIS'
+      FieldName = 'aliq_pis'
+      Precision = 14
+      Size = 2
+    end
+    object qry_Produtosaliq_cofins: TZBCDField
+      DisplayLabel = 'Aliq. COFINS'
+      FieldName = 'aliq_cofins'
+      Precision = 14
+      Size = 2
+    end
+    object qry_Produtosaliq_ipi: TZBCDField
+      DisplayLabel = 'Aliq. IPI'
+      FieldName = 'aliq_ipi'
+      Precision = 14
+      Size = 2
+    end
+    object qry_Produtosdesconto: TZBCDField
+      DisplayLabel = 'Desconto'
+      FieldName = 'desconto'
+      DisplayFormat = '#0.00'
+      Precision = 14
       Size = 2
     end
   end

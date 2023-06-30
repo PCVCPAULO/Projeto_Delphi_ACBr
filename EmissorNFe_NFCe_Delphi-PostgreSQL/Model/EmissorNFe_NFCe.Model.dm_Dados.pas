@@ -48,6 +48,20 @@ type
     qry_Transportnome_cidade: TZUnicodeStringField;
     qry_Transportcodigo_uf: TZIntegerField;
     qry_Transportnome_uf: TZUnicodeStringField;
+    qry_Produtos: TZQuery;
+    qry_Produtoscodigo: TZIntegerField;
+    qry_Produtosdescricao: TZUnicodeStringField;
+    qry_Produtospreco: TZBCDField;
+    qry_Produtosestoque: TZIntegerField;
+    qry_Produtoscst_icms: TZUnicodeStringField;
+    qry_Produtoscst_pis: TZUnicodeStringField;
+    qry_Produtoscst_cofins: TZUnicodeStringField;
+    qry_Produtoscst_ipi: TZUnicodeStringField;
+    qry_Produtosaliq_icms: TZBCDField;
+    qry_Produtosaliq_pis: TZBCDField;
+    qry_Produtosaliq_cofins: TZBCDField;
+    qry_Produtosaliq_ipi: TZBCDField;
+    qry_Produtosdesconto: TZBCDField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

@@ -220,7 +220,6 @@ begin
   dm_ConexaoPG.qry_Clientes.Close;
   dm_ConexaoPG.qry_Clientes.SQL.Clear;
   dm_ConexaoPG.qry_Clientes.SQL.Add('SELECT * FROM tab_clientes ORDER BY codigo');
-//  dm_ConexaoPG.qry_Clientes.ParamByName('pPesq').AsString := '%' + edtPesquisar.Text + '%';
   dm_ConexaoPG.qry_Clientes.Open;
   dm_ConexaoPG.qry_Estados.Active := True;
   dm_ConexaoPG.qry_Cidades.Active := True;

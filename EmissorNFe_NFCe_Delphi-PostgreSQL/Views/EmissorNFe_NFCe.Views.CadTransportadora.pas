@@ -90,6 +90,7 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
   public
@@ -109,6 +110,7 @@ uses
 
 procedure Tfrm_Transport.btnAlterarClick(Sender: TObject);
 begin
+  pgc_Principal.ActivePageIndex := 1;
   if not dm_ConexaoPG.qry_Transport.FieldByName('codigo').IsNull  then
   begin
     dm_ConexaoPG.qry_Transport.Edit;
@@ -211,6 +213,11 @@ end;
 procedure Tfrm_Transport.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
+end;
+
+procedure Tfrm_Transport.FormDestroy(Sender: TObject);
+begin
+ // frm_Transport := nil;
 end;
 
 procedure Tfrm_Transport.FormShow(Sender: TObject);

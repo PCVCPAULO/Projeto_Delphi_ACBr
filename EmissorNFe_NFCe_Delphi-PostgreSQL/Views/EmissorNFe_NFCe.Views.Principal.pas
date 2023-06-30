@@ -4,7 +4,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, ACBrBase, ACBrDFe, ACBrNFe;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, ACBrBase, ACBrDFe, ACBrNFe,
+  EmissorNFe.Views.Frm_SelecionarCertificado,
+  View.Produtos;
 
 type
   Tfrm_Principal = class(TForm)
@@ -24,6 +26,7 @@ type
     procedure Transportadoras1Click(Sender: TObject);
     procedure AjustarNFe;
     procedure FormShow(Sender: TObject);
+    procedure Produtos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +40,9 @@ implementation
 
 {$R *.dfm}
 
-uses EmissorNFe_NFCe.Views.CadastroClientes, EmissorNFe_NFCe.Model.dm_Dados,
+uses
+  EmissorNFe_NFCe.Views.CadastroClientes,
+  EmissorNFe_NFCe.Model.dm_Dados,
   EmissorNFe_NFCe.Views.CadTransportadora;
 
 procedure Tfrm_Principal.AjustarNFe;
@@ -50,11 +55,6 @@ procedure Tfrm_Principal.Clientes1Click(Sender: TObject);
 begin
   frm_CadClientes := Tfrm_CadClientes.Create(Self);
   try
-
-//    frm_ViewFornecedores.Top  := Round(pnl_MenuTopo.Height + ((pnl_Conteudo.Height - frm_ViewFornecedores.Height) / 2));
-//    frm_ViewFornecedores.Left := Round(pnl_MenuLateral.Width + ((pnl_Conteudo.Width - frm_ViewFornecedores.Width) / 2));
-
-//    frm_ViewFornecedores.Tag := PessoasToInt(tpFornecedores);
     frm_CadClientes.ShowModal;
     dm_ConexaoPG.Conectar;
   finally
@@ -65,6 +65,17 @@ end;
 procedure Tfrm_Principal.FormShow(Sender: TObject);
 begin
   AjustarNFe;
+end;
+
+procedure Tfrm_Principal.Produtos1Click(Sender: TObject);
+begin
+
+  frm_ViewProdutos := Tfrm_ViewProdutos.Create(Self);
+  try
+   frm_ViewProdutos.ShowModal;
+  finally
+    FreeAndNil(frm_ViewProdutos);
+  end;
 end;
 
 procedure Tfrm_Principal.Transportadoras1Click(Sender: TObject);

@@ -1,9 +1,9 @@
-object frm_CadClientes: Tfrm_CadClientes
+object frm_ViewProdutos: Tfrm_ViewProdutos
   Left = 0
   Top = 0
-  Caption = 'Cadastro Clientes'
-  ClientHeight = 721
-  ClientWidth = 982
+  Caption = 'frm_ViewProdutos'
+  ClientHeight = 613
+  ClientWidth = 1116
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,16 +17,19 @@ object frm_CadClientes: Tfrm_CadClientes
   object pnl_Principal: TPanel
     Left = 0
     Top = 0
-    Width = 982
-    Height = 721
+    Width = 1116
+    Height = 613
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitTop = -26
+    ExplicitWidth = 1008
+    ExplicitHeight = 639
     object pgc_Principal: TPageControl
       Left = 0
       Top = 0
-      Width = 982
-      Height = 721
+      Width = 1116
+      Height = 613
       ActivePage = tbs_Pesquisa
       Align = alClient
       Images = ImageList1
@@ -35,15 +38,22 @@ object frm_CadClientes: Tfrm_CadClientes
         Caption = 'Pesquisa'
         ImageIndex = -1
         object DBGrid1: TDBGrid
-          Left = 3
+          Left = 0
           Top = 112
           Width = 1358
           Height = 361
-          DataSource = ds_Clientes
+          DataSource = ds_Produtos
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          ParentFont = False
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
-          TitleFont.Height = -20
+          TitleFont.Height = -17
           TitleFont.Name = 'Segoe UI'
           TitleFont.Style = []
           OnDblClick = DBGrid1DblClick
@@ -51,20 +61,77 @@ object frm_CadClientes: Tfrm_CadClientes
             item
               Expanded = False
               FieldName = 'codigo'
-              Width = 88
+              Width = 75
               Visible = True
             end
             item
               Expanded = False
-              FieldName = 'nome'
-              Width = 747
+              FieldName = 'descricao'
+              Width = 289
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'preco'
+              Width = 100
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'estoque'
+              Width = 85
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'cst_icms'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'cst_pis'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'cst_cofins'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'cst_ipi'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'aliq_icms'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'aliq_pis'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'aliq_cofins'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'aliq_ipi'
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'desconto'
               Visible = True
             end>
         end
         object pnlBotoes: TPanel
           Left = 0
-          Top = 595
-          Width = 974
+          Top = 487
+          Width = 1108
           Height = 81
           Align = alBottom
           BevelOuter = bvNone
@@ -75,6 +142,8 @@ object frm_CadClientes: Tfrm_CadClientes
           Font.Style = []
           ParentFont = False
           TabOrder = 1
+          ExplicitTop = 528
+          ExplicitWidth = 1000
           object Panel3: TPanel
             Left = 176
             Top = 0
@@ -183,7 +252,7 @@ object frm_CadClientes: Tfrm_CadClientes
             end
           end
           object Panel7: TPanel
-            Left = 886
+            Left = 1020
             Top = 0
             Width = 88
             Height = 81
@@ -194,6 +263,7 @@ object frm_CadClientes: Tfrm_CadClientes
             Padding.Right = 3
             Padding.Bottom = 3
             TabOrder = 4
+            ExplicitLeft = 912
             object btnFechar: TButton
               Left = 3
               Top = 3
@@ -213,7 +283,7 @@ object frm_CadClientes: Tfrm_CadClientes
         object pnlPesquisa: TPanel
           Left = 0
           Top = 0
-          Width = 974
+          Width = 1108
           Height = 81
           Align = alTop
           BevelOuter = bvNone
@@ -224,6 +294,7 @@ object frm_CadClientes: Tfrm_CadClientes
           Font.Style = []
           ParentFont = False
           TabOrder = 2
+          ExplicitWidth = 1000
           object Label1: TLabel
             Left = 7
             Top = 4
@@ -245,10 +316,9 @@ object frm_CadClientes: Tfrm_CadClientes
             Cursor = crHandPoint
             CharCase = ecUpperCase
             TabOrder = 0
-            OnKeyDown = edtPesquisarKeyDown
           end
           object pnl_btnPesquisar: TPanel
-            Left = 886
+            Left = 1020
             Top = 0
             Width = 88
             Height = 81
@@ -258,6 +328,7 @@ object frm_CadClientes: Tfrm_CadClientes
             Padding.Right = 3
             Padding.Bottom = 3
             TabOrder = 1
+            ExplicitLeft = 912
             object btnPesquisar: TButton
               Left = 0
               Top = 3
@@ -279,189 +350,103 @@ object frm_CadClientes: Tfrm_CadClientes
         Caption = 'Cadastro'
         ImageIndex = -1
         object Label2: TLabel
-          Left = 32
-          Top = 32
+          Left = 24
+          Top = 24
           Width = 65
           Height = 28
           Caption = 'C'#243'digo'
           FocusControl = cxDBSpinEdit1
         end
         object Label3: TLabel
-          Left = 208
-          Top = 32
-          Width = 54
+          Left = 160
+          Top = 24
+          Width = 84
           Height = 28
-          Caption = 'Nome'
-          FocusControl = edt_Nome
-        end
-        object lbl_CPF_CNPJ: TLabel
-          Left = 253
-          Top = 124
-          Width = 33
-          Height = 28
-          Caption = 'CPF'
-          FocusControl = cxDBTextEdit3
-        end
-        object lbl_RG_IE: TLabel
-          Left = 428
-          Top = 124
-          Width = 26
-          Height = 28
-          Caption = 'RG'
-          FocusControl = cxDBTextEdit4
-        end
-        object Label7: TLabel
-          Left = 191
-          Top = 218
-          Width = 81
-          Height = 28
-          Caption = 'Endere'#231'o'
-          FocusControl = cxDBTextEdit5
-        end
-        object Label8: TLabel
-          Left = 676
-          Top = 218
-          Width = 24
-          Height = 28
-          Caption = 'N'#186
-          FocusControl = cxDBTextEdit6
-        end
-        object Label9: TLabel
-          Left = 32
-          Top = 304
-          Width = 52
-          Height = 28
-          Caption = 'Bairro'
-          FocusControl = cxDBTextEdit7
-        end
-        object Label10: TLabel
-          Left = 773
-          Top = 216
-          Width = 125
-          Height = 28
-          Caption = 'Complemento'
-          FocusControl = cxDBTextEdit8
-        end
-        object Label11: TLabel
-          Left = 32
-          Top = 216
-          Width = 33
-          Height = 28
-          Caption = 'CEP'
+          Caption = 'Descri'#231#227'o'
+          FocusControl = edt_Descricao
         end
         object Label4: TLabel
-          Left = 428
-          Top = 304
-          Width = 59
+          Left = 24
+          Top = 104
+          Width = 49
           Height = 28
-          Caption = 'Estado'
-          FocusControl = cxDBTextEdit8
+          Caption = 'Pre'#231'o'
         end
         object Label5: TLabel
-          Left = 528
-          Top = 304
-          Width = 88
+          Left = 160
+          Top = 104
+          Width = 70
           Height = 28
-          Caption = 'Munic'#237'pio'
-          FocusControl = cxDBTextEdit8
+          Caption = 'Estoque'
+          FocusControl = dbs_Estoque
         end
-        object cxDBSpinEdit1: TcxDBSpinEdit
-          Left = 32
-          Top = 64
-          DataBinding.DataField = 'codigo'
-          DataBinding.DataSource = ds_Clientes
-          Enabled = False
-          TabOrder = 0
-          Width = 170
+        object Label6: TLabel
+          Left = 24
+          Top = 192
+          Width = 84
+          Height = 28
+          Caption = 'CST ICMS'
         end
-        object edt_Nome: TcxDBTextEdit
-          Left = 208
-          Top = 66
-          DataBinding.DataField = 'nome'
-          DataBinding.DataSource = ds_Clientes
-          TabOrder = 1
-          Width = 537
+        object Label7: TLabel
+          Left = 24
+          Top = 268
+          Width = 65
+          Height = 28
+          Caption = 'CST PIS'
         end
-        object cxDBTextEdit3: TcxDBTextEdit
-          Left = 253
-          Top = 158
-          DataBinding.DataField = 'cnpj_cpf'
-          DataBinding.DataSource = ds_Clientes
-          TabOrder = 2
-          Width = 169
+        object Label8: TLabel
+          Left = 449
+          Top = 268
+          Width = 105
+          Height = 28
+          Caption = 'CST COFINS'
         end
-        object cxDBTextEdit4: TcxDBTextEdit
-          Left = 428
-          Top = 158
-          DataBinding.DataField = 'ie_rg'
-          DataBinding.DataSource = ds_Clientes
-          TabOrder = 3
-          Width = 226
+        object Label9: TLabel
+          Left = 445
+          Top = 192
+          Width = 59
+          Height = 28
+          Caption = 'CST IPI'
         end
-        object cxDBTextEdit5: TcxDBTextEdit
-          Left = 191
-          Top = 252
-          DataBinding.DataField = 'endereco'
-          DataBinding.DataSource = ds_Clientes
-          TabOrder = 4
-          Width = 479
+        object Label10: TLabel
+          Left = 24
+          Top = 372
+          Width = 90
+          Height = 28
+          Caption = 'Aliq. ICMS'
         end
-        object cxDBTextEdit6: TcxDBTextEdit
-          Left = 676
-          Top = 252
-          DataBinding.DataField = 'numero'
-          DataBinding.DataSource = ds_Clientes
-          TabOrder = 5
-          Width = 91
+        object Label11: TLabel
+          Left = 197
+          Top = 372
+          Width = 71
+          Height = 28
+          Caption = 'Aliq. PIS'
         end
-        object cxDBTextEdit7: TcxDBTextEdit
-          Left = 32
-          Top = 338
-          DataBinding.DataField = 'bairro'
-          DataBinding.DataSource = ds_Clientes
-          TabOrder = 6
-          Width = 388
+        object Label12: TLabel
+          Left = 393
+          Top = 372
+          Width = 111
+          Height = 28
+          Caption = 'Aliq. COFINS'
         end
-        object cxDBTextEdit8: TcxDBTextEdit
-          Left = 773
-          Top = 252
-          DataBinding.DataField = 'complemento'
-          DataBinding.DataSource = ds_Clientes
-          TabOrder = 7
-          Width = 138
+        object Label13: TLabel
+          Left = 559
+          Top = 372
+          Width = 65
+          Height = 28
+          Caption = 'Aliq. IPI'
         end
-        object rdg_Pessoa: TcxRadioGroup
-          Left = 32
-          Top = 121
-          Caption = 'Pessoa'
-          Properties.Columns = 2
-          Properties.Items = <
-            item
-              Caption = 'F'#237'sica'
-              Value = 'F'
-            end
-            item
-              Caption = 'Jur'#237'dica'
-              Value = 'J'
-            end>
-          Properties.OnEditValueChanged = rdg_PessoaPropertiesEditValueChanged
-          TabOrder = 8
-          Height = 73
-          Width = 201
-        end
-        object cxDBMaskEdit1: TcxDBMaskEdit
-          Left = 32
-          Top = 250
-          DataBinding.DataField = 'cep'
-          DataBinding.DataSource = ds_Clientes
-          Properties.EditMask = '9999-999'
-          TabOrder = 9
-          Width = 153
+        object Label14: TLabel
+          Left = 720
+          Top = 372
+          Width = 83
+          Height = 28
+          Caption = 'Desconto'
         end
         object pnlBotoesCad: TPanel
           Left = 0
-          Top = 595
-          Width = 974
+          Top = 487
+          Width = 1108
           Height = 81
           Align = alBottom
           BevelOuter = bvNone
@@ -471,9 +456,9 @@ object frm_CadClientes: Tfrm_CadClientes
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          TabOrder = 10
+          TabOrder = 12
           object Panel2: TPanel
-            Left = 796
+            Left = 930
             Top = 0
             Width = 97
             Height = 81
@@ -500,7 +485,7 @@ object frm_CadClientes: Tfrm_CadClientes
             end
           end
           object Panel8: TPanel
-            Left = 893
+            Left = 1027
             Top = 0
             Width = 81
             Height = 81
@@ -527,40 +512,234 @@ object frm_CadClientes: Tfrm_CadClientes
             end
           end
         end
-        object lcbx_Estados: TcxDBLookupComboBox
-          Left = 426
-          Top = 338
-          DataBinding.DataField = 'codigo_uf'
-          DataBinding.DataSource = ds_Clientes
-          Properties.KeyFieldNames = 'codigo_estado'
-          Properties.ListColumns = <
-            item
-              FieldName = 'sigla_estado'
-            end>
-          Properties.ListSource = ds_Estados
-          Properties.OnEditValueChanged = lcbx_EstadosPropertiesEditValueChanged
-          TabOrder = 11
-          Width = 85
+        object cxDBSpinEdit1: TcxDBSpinEdit
+          Left = 24
+          Top = 56
+          DataBinding.DataField = 'codigo'
+          DataBinding.DataSource = ds_Produtos
+          TabOrder = 13
+          Width = 121
         end
-        object lcbx_Cidades: TcxDBLookupComboBox
-          Left = 528
-          Top = 338
-          DataBinding.DataField = 'codigo_cidade'
-          DataBinding.DataSource = ds_Clientes
-          Properties.KeyFieldNames = 'codigo_cidade'
-          Properties.ListColumns = <
-            item
-              FieldName = 'nome_cidade'
-            end>
-          Properties.ListSource = ds_Cidades
-          TabOrder = 12
-          Width = 383
+        object edt_Descricao: TcxDBTextEdit
+          Left = 160
+          Top = 56
+          Cursor = crHandPoint
+          DataBinding.DataField = 'descricao'
+          DataBinding.DataSource = ds_Produtos
+          Properties.CharCase = ecUpperCase
+          TabOrder = 0
+          OnKeyDown = edt_DescricaoKeyDown
+          Width = 681
+        end
+        object dbs_Estoque: TcxDBSpinEdit
+          Left = 160
+          Top = 136
+          DataBinding.DataField = 'estoque'
+          DataBinding.DataSource = ds_Produtos
+          TabOrder = 2
+          Width = 121
+        end
+        object edt_Preco: TcxDBCurrencyEdit
+          Left = 24
+          Top = 138
+          DataBinding.DataField = 'preco'
+          DataBinding.DataSource = ds_Produtos
+          Properties.DisplayFormat = '0.00;-0.00'
+          TabOrder = 1
+          Width = 121
+        end
+        object edt_AliqiCMS: TcxDBCurrencyEdit
+          Left = 24
+          Top = 406
+          DataBinding.DataField = 'aliq_icms'
+          DataBinding.DataSource = ds_Produtos
+          Properties.DisplayFormat = '0.00;-0.00'
+          TabOrder = 7
+          Width = 121
+        end
+        object edt_AliPIS: TcxDBCurrencyEdit
+          Left = 201
+          Top = 406
+          DataBinding.DataField = 'aliq_pis'
+          DataBinding.DataSource = ds_Produtos
+          Properties.DisplayFormat = '0.00;-0.00'
+          TabOrder = 8
+          Width = 121
+        end
+        object edt_AliqCOFINS: TcxDBCurrencyEdit
+          Left = 383
+          Top = 406
+          DataBinding.DataField = 'aliq_cofins'
+          DataBinding.DataSource = ds_Produtos
+          Properties.DisplayFormat = '0.00;-0.00'
+          TabOrder = 9
+          Width = 121
+        end
+        object edt_AliqIPI: TcxDBCurrencyEdit
+          Left = 553
+          Top = 406
+          DataBinding.DataField = 'aliq_ipi'
+          DataBinding.DataSource = ds_Produtos
+          Properties.DisplayFormat = '0.00;-0.00'
+          TabOrder = 10
+          Width = 121
+        end
+        object edt_Desconto: TcxDBCurrencyEdit
+          Left = 720
+          Top = 406
+          DataBinding.DataField = 'desconto'
+          DataBinding.DataSource = ds_Produtos
+          Properties.DisplayFormat = '0.00;-0.00'
+          TabOrder = 11
+          Width = 121
+        end
+        object cbx_CST_ICMS: TComboBox
+          Left = 24
+          Top = 226
+          Width = 409
+          Height = 31
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ItemIndex = 0
+          ParentFont = False
+          TabOrder = 3
+          Text = '00 - Tributada integralmente'
+          Items.Strings = (
+            '00 - Tributada integralmente'
+            
+              '10 - Tributada e com cobran'#231'a do ICMS por substitui'#231#227'o tribut'#225'ri' +
+              'a'
+            '20 - Com redu'#231#227'o da BC'
+            
+              '30 - Isenta / n'#227'o tributada e com cobran'#231'a do ICMS por substitui' +
+              #231#227'o tribut'#225'ria'
+            '40 - Isenta'
+            '41 - N'#227'o tributada'
+            '50 - Com suspens'#227'o'
+            '51 - Com diferimento'
+            '60 - ICMS cobrado anteriormente por substitui'#231#227'o tribut'#225'ria'
+            
+              '70 - Com redu'#231#227'o da BC e cobran'#231'a do ICMS por substitui'#231#227'o tribu' +
+              't'#225'ria'
+            '90 - Outras'
+            '101 - Tributada pelo Simples Nacional com permiss'#227'o de cr'#233'dito'
+            '102 - Tributada pelo Simples Nacional sem permiss'#227'o de cr'#233'dito'
+            
+              '103 - Isen'#231#227'o do ICMS no Simples Nacional para faixa de receita ' +
+              'bruta'
+            
+              '201 - Tributada pelo Simples Nacional com permiss'#227'o de cr'#233'dito e' +
+              ' com cobran'#231'a do ICMS por substitui'#231#227'o tribut'#225'ria'
+            
+              '202 - Tributada pelo Simples Nacional sem permiss'#227'o de cr'#233'dito e' +
+              ' com cobran'#231'a do ICMS por substitui'#231#227'o tribut'#225'ria'
+            
+              '203 - Isen'#231#227'o do ICMS no Simples Nacional para faixa de receita ' +
+              'bruta e com cobran'#231'a do ICMS por substitui'#231#227'o tribut'#225'ria'
+            '300 - Imune'
+            '400 - N'#227'o tributada pelo Simples Nacional'
+            
+              '500 - ICMS cobrado anteriormente por substitui'#231#227'o tribut'#225'ria (su' +
+              'bstitu'#237'do) ou por antecipa'#231#227'o'
+            '900 - Outros')
+        end
+        object cbx_CST_PIS: TComboBox
+          Left = 24
+          Top = 302
+          Width = 409
+          Height = 31
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ItemIndex = 0
+          ParentFont = False
+          TabOrder = 5
+          Text = '01 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota B'#225'sica'
+          Items.Strings = (
+            '01 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota B'#225'sica'
+            '02 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota Diferenciada'
+            
+              '03 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota por Unidade de Medida de P' +
+              'roduto'
+            '04 - Opera'#231#227'o Tribut'#225'vel Monof'#225'sica '#8211' Revenda a Al'#237'quota Zero'
+            '05 - Opera'#231#227'o Tribut'#225'vel por Substitui'#231#227'o Tribut'#225'ria'
+            '06 - Opera'#231#227'o Tribut'#225'vel a Al'#237'quota Zero'
+            '07 - Opera'#231#227'o Isenta da Contribui'#231#227'o'
+            '08 - Opera'#231#227'o sem Incid'#234'ncia da Contribui'#231#227'o'
+            '09 - Opera'#231#227'o com Suspens'#227'o da Contribui'#231#227'o'
+            '49 - Outras Opera'#231#245'es de Sa'#237'da')
+        end
+        object cbx_CST_COFINS: TComboBox
+          Left = 439
+          Top = 302
+          Width = 402
+          Height = 31
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ItemIndex = 0
+          ParentFont = False
+          TabOrder = 6
+          Text = '01 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota B'#225'sica'
+          Items.Strings = (
+            '01 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota B'#225'sica'
+            '02 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota Diferenciada'
+            
+              '03 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota por Unidade de Medida de P' +
+              'roduto'
+            '04 - Opera'#231#227'o Tribut'#225'vel Monof'#225'sica '#8211' Revenda a Al'#237'quota Zero'
+            '05 - Opera'#231#227'o Tribut'#225'vel por Substitui'#231#227'o Tribut'#225'ria'
+            '06 - Opera'#231#227'o Tribut'#225'vel a Al'#237'quota Zero'
+            '07 - Opera'#231#227'o Isenta da Contribui'#231#227'o'
+            '08 - Opera'#231#227'o sem Incid'#234'ncia da Contribui'#231#227'o'
+            '09 - Opera'#231#227'o com Suspens'#227'o da Contribui'#231#227'o'
+            '49 - Outras Opera'#231#245'es de Sa'#237'da')
+        end
+        object cbx_CST_IPI: TComboBox
+          Left = 439
+          Top = 226
+          Width = 402
+          Height = 31
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ItemIndex = 0
+          ParentFont = False
+          TabOrder = 4
+          Text = '50 - Sa'#237'da Tributada'
+          Items.Strings = (
+            '50 - Sa'#237'da Tributada'
+            '51 - Sa'#237'da Tribut'#225'vel com Al'#237'quota Zero'
+            '52 - Sa'#237'da Isenta'
+            '53 - Sa'#237'da N'#227'o Tributada'
+            '54 - Sa'#237'da Imune'
+            '55 - Sa'#237'da com Suspens'#227'o'
+            '99 - Outras Sa'#237'das')
         end
       end
     end
   end
-  object ds_Clientes: TDataSource
-    DataSet = dm_ConexaoPG.qry_Clientes
+  object ds_Cidades: TDataSource
+    DataSet = dm_ConexaoPG.qry_Cidades
+    Left = 908
+    Top = 305
+  end
+  object ds_Estados: TDataSource
+    DataSet = dm_ConexaoPG.qry_Estados
+    Left = 908
+    Top = 249
+  end
+  object ds_Produtos: TDataSource
+    DataSet = dm_ConexaoPG.qry_Produtos
     Left = 324
     Top = 47
   end
@@ -569,8 +748,8 @@ object frm_CadClientes: Tfrm_CadClientes
     DrawingStyle = dsTransparent
     Height = 32
     Width = 32
-    Left = 409
-    Top = 50
+    Left = 905
+    Top = 194
     Bitmap = {
       494C01010C001800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000008000000001002000000000000000
@@ -2690,15 +2869,5 @@ object frm_CadClientes: Tfrm_CadClientes
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000}
-  end
-  object ds_Estados: TDataSource
-    DataSet = dm_ConexaoPG.qry_Estados
-    Left = 516
-    Top = 49
-  end
-  object ds_Cidades: TDataSource
-    DataSet = dm_ConexaoPG.qry_Cidades
-    Left = 644
-    Top = 49
   end
 end
