@@ -13,6 +13,7 @@ object frm_Principal: Tfrm_Principal
   Menu = MainMenu1
   Position = poDesigned
   WindowState = wsMaximized
+  OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
   object MainMenu1: TMainMenu
@@ -32,14 +33,25 @@ object frm_Principal: Tfrm_Principal
         Caption = 'Transportadoras'
         OnClick = Transportadoras1Click
       end
+      object Emitente1: TMenuItem
+        Caption = 'Emitente'
+        OnClick = Emitente1Click
+      end
     end
     object Emisso1: TMenuItem
       Caption = 'Emiss'#227'o'
       object NFE1: TMenuItem
         Caption = 'NFe'
+        object VerificarStatusNFe1: TMenuItem
+          Caption = 'Verificar Status NFe'
+          OnClick = VerificarStatusNFe1Click
+        end
       end
       object NFCe1: TMenuItem
         Caption = 'NFCe'
+        object VerificarStatusNFCe1: TMenuItem
+          Caption = 'Verificar Status NFCe'
+        end
       end
     end
     object Sair1: TMenuItem
@@ -59,7 +71,7 @@ object frm_Principal: Tfrm_Principal
     Configuracoes.WebServices.QuebradeLinha = '|'
     Configuracoes.RespTec.IdCSRT = 0
     Left = 656
-    Top = 64
+    Top = 56
   end
   object ACBrNFCe1: TACBrNFe
     Configuracoes.Geral.SSLLib = libNone
@@ -74,6 +86,11 @@ object frm_Principal: Tfrm_Principal
     Configuracoes.WebServices.QuebradeLinha = '|'
     Configuracoes.RespTec.IdCSRT = 0
     Left = 784
-    Top = 64
+    Top = 56
+  end
+  object ds_DadosEmitente: TDataSource
+    DataSet = dm_ConexaoPG.qry_DadosEmitente
+    Left = 888
+    Top = 56
   end
 end

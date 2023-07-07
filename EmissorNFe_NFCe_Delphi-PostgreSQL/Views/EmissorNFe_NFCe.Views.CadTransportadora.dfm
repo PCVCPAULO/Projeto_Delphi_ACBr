@@ -28,7 +28,7 @@ object frm_Transport: Tfrm_Transport
       Top = 0
       Width = 982
       Height = 721
-      ActivePage = tbs_Pesquisa
+      ActivePage = tbs_Cadastro
       Align = alClient
       Images = ImageList1
       TabOrder = 0

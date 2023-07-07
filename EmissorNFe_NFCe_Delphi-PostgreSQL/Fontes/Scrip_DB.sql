@@ -133,3 +133,29 @@ create table tab_cidades(
 	codigo_cidade varchar(7) primary key,
 	nome_cidade varchar(120)
 );
+
+create table tab_emitente(
+	codigo serial primary Key,
+	nome varchar(60),
+	pessoa char(1) default 'F',
+	cnpj_cpf varchar(20),
+	ie_rg varchar (18),
+	endereco varchar(60),
+	numero varchar(10),
+	bairro varchar(50),
+	complemento varchar(40),
+	cep varchar (9),
+	codigo_cidade integer,
+	nome_cidade varchar(100),
+	codigo_uf integer,
+	nome_uf varchar(2),
+	certificado varchar(150),
+	senha_certificado varchar(20)
+)
+
+alter table tab_emitente add column ID_CSC INTEGER;
+alter table tab_emitente add column token_CSC varchar(200);
+
+alter table tab_produtos add column ncm varchar(8);
+alter table tab_produtos add column gtin varchar(13);
+alter table tab_produtos add column cfop varchar(4);

@@ -1,9 +1,9 @@
-object frm_ViewProdutos: Tfrm_ViewProdutos
+object frm_Emitente: Tfrm_Emitente
   Left = 0
   Top = 0
-  Caption = 'frm_ViewProdutos'
-  ClientHeight = 613
-  ClientWidth = 1116
+  Caption = 'frm_Emitente'
+  ClientHeight = 721
+  ClientWidth = 982
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,124 +11,77 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
-  OnClose = FormClose
   OnShow = FormShow
   TextHeight = 28
+  object Label13: TLabel
+    Left = 40
+    Top = 416
+    Width = 95
+    Height = 28
+    Caption = 'Certificado'
+  end
+  object Label14: TLabel
+    Left = 434
+    Top = 418
+    Width = 53
+    Height = 28
+    Caption = 'Senha'
+    FocusControl = edt_Senha
+  end
   object pnl_Principal: TPanel
     Left = 0
     Top = 0
-    Width = 1116
-    Height = 613
+    Width = 982
+    Height = 721
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitLeft = -360
+    ExplicitTop = -288
     object pgc_Principal: TPageControl
       Left = 0
       Top = 0
-      Width = 1116
-      Height = 613
+      Width = 982
+      Height = 721
       ActivePage = tbs_Cadastro
       Align = alClient
       Images = ImageList1
       TabOrder = 0
+      ExplicitWidth = 622
+      ExplicitHeight = 433
       object tbs_Pesquisa: TTabSheet
         Caption = 'Pesquisa'
         ImageIndex = -1
         object DBGrid1: TDBGrid
-          Left = 0
+          Left = 3
           Top = 112
           Width = 1358
           Height = 361
-          DataSource = ds_Produtos
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -17
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-          ParentFont = False
+          DataSource = ds_Emitente
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
-          TitleFont.Height = -17
+          TitleFont.Height = -20
           TitleFont.Name = 'Segoe UI'
           TitleFont.Style = []
-          OnDblClick = DBGrid1DblClick
           Columns = <
             item
               Expanded = False
               FieldName = 'codigo'
-              Width = 75
+              Width = 88
               Visible = True
             end
             item
               Expanded = False
-              FieldName = 'descricao'
-              Width = 289
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'preco'
-              Width = 100
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'estoque'
-              Width = 85
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'cst_icms'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'cst_pis'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'cst_cofins'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'cst_ipi'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'aliq_icms'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'aliq_pis'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'aliq_cofins'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'aliq_ipi'
-              Visible = True
-            end
-            item
-              Expanded = False
-              FieldName = 'desconto'
+              FieldName = 'nome'
+              Width = 747
               Visible = True
             end>
         end
         object pnlBotoes: TPanel
           Left = 0
-          Top = 487
-          Width = 1108
+          Top = 595
+          Width = 974
           Height = 81
           Align = alBottom
           BevelOuter = bvNone
@@ -139,6 +92,7 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
           Font.Style = []
           ParentFont = False
           TabOrder = 1
+          ExplicitTop = 610
           object Panel3: TPanel
             Left = 176
             Top = 0
@@ -163,7 +117,6 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
               ImageMargins.Top = 10
               Images = ImageList1
               TabOrder = 0
-              OnClick = btnExcluirClick
             end
           end
           object Panel4: TPanel
@@ -190,7 +143,6 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
               ImageMargins.Top = 10
               Images = ImageList1
               TabOrder = 0
-              OnClick = btnAlterarClick
             end
           end
           object Panel5: TPanel
@@ -247,7 +199,7 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
             end
           end
           object Panel7: TPanel
-            Left = 1020
+            Left = 886
             Top = 0
             Width = 88
             Height = 81
@@ -270,14 +222,13 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
               ImageMargins.Top = 10
               Images = ImageList1
               TabOrder = 0
-              OnClick = btnFecharClick
             end
           end
         end
         object pnlPesquisa: TPanel
           Left = 0
           Top = 0
-          Width = 1108
+          Width = 974
           Height = 81
           Align = alTop
           BevelOuter = bvNone
@@ -311,7 +262,7 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
             TabOrder = 0
           end
           object pnl_btnPesquisar: TPanel
-            Left = 1020
+            Left = 886
             Top = 0
             Width = 88
             Height = 81
@@ -333,7 +284,6 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
               ImageMargins.Top = 10
               Images = ImageList1
               TabOrder = 0
-              OnClick = btnPesquisarClick
             end
           end
         end
@@ -342,123 +292,194 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
         Caption = 'Cadastro'
         ImageIndex = -1
         object Label2: TLabel
-          Left = 24
-          Top = 24
+          Left = 32
+          Top = 32
           Width = 65
           Height = 28
           Caption = 'C'#243'digo'
           FocusControl = cxDBSpinEdit1
         end
         object Label3: TLabel
-          Left = 160
-          Top = 24
-          Width = 84
-          Height = 28
-          Caption = 'Descri'#231#227'o'
-          FocusControl = edt_Descricao
-        end
-        object Label4: TLabel
-          Left = 24
-          Top = 102
-          Width = 49
-          Height = 28
-          Caption = 'Pre'#231'o'
-        end
-        object Label5: TLabel
-          Left = 160
-          Top = 104
-          Width = 70
-          Height = 28
-          Caption = 'Estoque'
-        end
-        object Label6: TLabel
-          Left = 24
-          Top = 192
-          Width = 84
-          Height = 28
-          Caption = 'CST ICMS'
-        end
-        object Label7: TLabel
-          Left = 24
-          Top = 268
-          Width = 65
-          Height = 28
-          Caption = 'CST PIS'
-        end
-        object Label8: TLabel
-          Left = 449
-          Top = 268
-          Width = 105
-          Height = 28
-          Caption = 'CST COFINS'
-        end
-        object Label9: TLabel
-          Left = 445
-          Top = 192
-          Width = 59
-          Height = 28
-          Caption = 'CST IPI'
-        end
-        object Label10: TLabel
-          Left = 24
-          Top = 372
-          Width = 90
-          Height = 28
-          Caption = 'Aliq. ICMS'
-        end
-        object Label11: TLabel
-          Left = 197
-          Top = 372
-          Width = 71
-          Height = 28
-          Caption = 'Aliq. PIS'
-        end
-        object Label12: TLabel
-          Left = 393
-          Top = 372
-          Width = 111
-          Height = 28
-          Caption = 'Aliq. COFINS'
-        end
-        object Label13: TLabel
-          Left = 559
-          Top = 372
-          Width = 65
-          Height = 28
-          Caption = 'Aliq. IPI'
-        end
-        object Label14: TLabel
-          Left = 720
-          Top = 372
-          Width = 83
-          Height = 28
-          Caption = 'Desconto'
-        end
-        object Label15: TLabel
-          Left = 343
-          Top = 102
+          Left = 208
+          Top = 32
           Width = 54
           Height = 28
-          Caption = 'GETIN'
+          Caption = 'Nome'
+          FocusControl = edt_Nome
+        end
+        object lbl_CPF_CNPJ: TLabel
+          Left = 253
+          Top = 124
+          Width = 33
+          Height = 28
+          Caption = 'CPF'
+        end
+        object lbl_RG_IE: TLabel
+          Left = 604
+          Top = 124
+          Width = 26
+          Height = 28
+          Caption = 'RG'
+        end
+        object Label7: TLabel
+          Left = 191
+          Top = 218
+          Width = 81
+          Height = 28
+          Caption = 'Endere'#231'o'
+          FocusControl = cxDBTextEdit5
+        end
+        object Label8: TLabel
+          Left = 676
+          Top = 218
+          Width = 24
+          Height = 28
+          Caption = 'N'#186
+          FocusControl = cxDBTextEdit6
+        end
+        object Label9: TLabel
+          Left = 32
+          Top = 304
+          Width = 52
+          Height = 28
+          Caption = 'Bairro'
+          FocusControl = cxDBTextEdit7
+        end
+        object Label10: TLabel
+          Left = 773
+          Top = 216
+          Width = 125
+          Height = 28
+          Caption = 'Complemento'
+          FocusControl = cxDBTextEdit8
+        end
+        object Label11: TLabel
+          Left = 32
+          Top = 216
+          Width = 33
+          Height = 28
+          Caption = 'CEP'
+        end
+        object Label4: TLabel
+          Left = 428
+          Top = 304
+          Width = 59
+          Height = 28
+          Caption = 'Estado'
+          FocusControl = cxDBTextEdit8
+        end
+        object Label5: TLabel
+          Left = 528
+          Top = 304
+          Width = 88
+          Height = 28
+          Caption = 'Munic'#237'pio'
+          FocusControl = cxDBTextEdit8
+        end
+        object Label6: TLabel
+          Left = 32
+          Top = 408
+          Width = 95
+          Height = 28
+          Caption = 'Certificado'
+        end
+        object Label12: TLabel
+          Left = 426
+          Top = 411
+          Width = 53
+          Height = 28
+          Caption = 'Senha'
+          FocusControl = edt_Senha
+        end
+        object Label15: TLabel
+          Left = 32
+          Top = 504
+          Width = 59
+          Height = 28
+          Caption = 'ID CSC'
         end
         object Label16: TLabel
-          Left = 528
-          Top = 104
-          Width = 45
+          Left = 195
+          Top = 504
+          Width = 101
           Height = 28
-          Caption = 'NCM'
+          Caption = 'TOKEN CSC'
         end
-        object Label17: TLabel
-          Left = 712
-          Top = 102
-          Width = 48
-          Height = 28
-          Caption = 'CFOP'
+        object cxDBSpinEdit1: TcxDBSpinEdit
+          Left = 32
+          Top = 64
+          DataBinding.DataField = 'codigo'
+          DataBinding.DataSource = ds_Emitente
+          Enabled = False
+          TabOrder = 0
+          Width = 170
+        end
+        object edt_Nome: TcxDBTextEdit
+          Left = 208
+          Top = 66
+          Cursor = crHandPoint
+          DataBinding.DataField = 'nome'
+          DataBinding.DataSource = ds_Emitente
+          Properties.CharCase = ecUpperCase
+          TabOrder = 1
+          Width = 537
+        end
+        object cxDBTextEdit5: TcxDBTextEdit
+          Left = 191
+          Top = 252
+          DataBinding.DataField = 'endereco'
+          DataBinding.DataSource = ds_Emitente
+          TabOrder = 2
+          Width = 479
+        end
+        object cxDBTextEdit6: TcxDBTextEdit
+          Left = 676
+          Top = 252
+          DataBinding.DataField = 'numero'
+          DataBinding.DataSource = ds_Emitente
+          TabOrder = 3
+          Width = 91
+        end
+        object cxDBTextEdit7: TcxDBTextEdit
+          Left = 32
+          Top = 338
+          DataBinding.DataField = 'bairro'
+          DataBinding.DataSource = ds_Emitente
+          Properties.CharCase = ecUpperCase
+          TabOrder = 4
+          Width = 388
+        end
+        object cxDBTextEdit8: TcxDBTextEdit
+          Left = 773
+          Top = 252
+          DataBinding.DataField = 'complemento'
+          DataBinding.DataSource = ds_Emitente
+          TabOrder = 5
+          Width = 138
+        end
+        object rdg_Pessoa: TcxRadioGroup
+          Left = 32
+          Top = 121
+          Caption = 'Pessoa'
+          Properties.Columns = 2
+          Properties.Items = <
+            item
+              Caption = 'F'#237'sica'
+              Value = 'F'
+            end
+            item
+              Caption = 'Jur'#237'dica'
+              Value = 'J'
+            end>
+          Properties.OnEditValueChanged = rdg_PessoaPropertiesEditValueChanged
+          TabOrder = 6
+          Height = 73
+          Width = 201
         end
         object pnlBotoesCad: TPanel
           Left = 0
-          Top = 487
-          Width = 1108
+          Top = 595
+          Width = 974
           Height = 81
           Align = alBottom
           BevelOuter = bvNone
@@ -468,9 +489,10 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          TabOrder = 11
+          TabOrder = 7
+          ExplicitTop = 610
           object Panel2: TPanel
-            Left = 930
+            Left = 796
             Top = 0
             Width = 97
             Height = 81
@@ -497,7 +519,7 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
             end
           end
           object Panel8: TPanel
-            Left = 1027
+            Left = 893
             Top = 0
             Width = 81
             Height = 81
@@ -524,260 +546,125 @@ object frm_ViewProdutos: Tfrm_ViewProdutos
             end
           end
         end
-        object cxDBSpinEdit1: TcxDBSpinEdit
-          Left = 24
-          Top = 56
-          DataBinding.DataField = 'codigo'
-          DataBinding.DataSource = ds_Produtos
-          TabOrder = 12
-          Width = 121
-        end
-        object edt_Descricao: TcxDBTextEdit
-          Left = 160
-          Top = 56
-          Cursor = crHandPoint
-          DataBinding.DataField = 'descricao'
-          DataBinding.DataSource = ds_Produtos
-          Properties.CharCase = ecUpperCase
-          TabOrder = 0
-          OnKeyDown = edt_DescricaoKeyDown
-          Width = 681
-        end
-        object edt_Preco: TcxDBCurrencyEdit
-          Left = 24
-          Top = 138
-          DataBinding.DataField = 'preco'
-          DataBinding.DataSource = ds_Produtos
-          Properties.DisplayFormat = '0.00;-0.00'
-          TabOrder = 1
-          Width = 121
-        end
-        object edt_AliqiCMS: TcxDBCurrencyEdit
-          Left = 24
-          Top = 406
-          DataBinding.DataField = 'aliq_icms'
-          DataBinding.DataSource = ds_Produtos
-          Properties.DisplayFormat = '0.00;-0.00'
-          TabOrder = 6
-          Width = 121
-        end
-        object edt_AliPIS: TcxDBCurrencyEdit
-          Left = 201
-          Top = 406
-          DataBinding.DataField = 'aliq_pis'
-          DataBinding.DataSource = ds_Produtos
-          Properties.DisplayFormat = '0.00;-0.00'
-          TabOrder = 7
-          Width = 121
-        end
-        object edt_AliqCOFINS: TcxDBCurrencyEdit
-          Left = 383
-          Top = 406
-          DataBinding.DataField = 'aliq_cofins'
-          DataBinding.DataSource = ds_Produtos
-          Properties.DisplayFormat = '0.00;-0.00'
+        object lcbx_Estados: TcxDBLookupComboBox
+          Left = 426
+          Top = 338
+          DataBinding.DataField = 'codigo_uf'
+          DataBinding.DataSource = ds_Emitente
+          Properties.KeyFieldNames = 'codigo_estado'
+          Properties.ListColumns = <
+            item
+              FieldName = 'sigla_estado'
+            end>
+          Properties.ListSource = ds_Estados
+          Properties.OnEditValueChanged = lcbx_EstadosPropertiesEditValueChanged
           TabOrder = 8
-          Width = 121
+          Width = 85
         end
-        object edt_AliqIPI: TcxDBCurrencyEdit
-          Left = 553
-          Top = 406
-          DataBinding.DataField = 'aliq_ipi'
-          DataBinding.DataSource = ds_Produtos
-          Properties.DisplayFormat = '0.00;-0.00'
-          TabOrder = 9
-          Width = 121
-        end
-        object edt_Desconto: TcxDBCurrencyEdit
-          Left = 720
-          Top = 406
-          DataBinding.DataField = 'desconto'
-          DataBinding.DataSource = ds_Produtos
-          Properties.DisplayFormat = '0.00;-0.00'
-          TabOrder = 10
-          Width = 121
-        end
-        object cbx_CST_ICMS: TComboBox
-          Left = 24
-          Top = 226
-          Width = 409
-          Height = 31
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -17
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ItemIndex = 0
-          ParentFont = False
-          TabOrder = 2
-          Text = '00 - Tributada integralmente'
-          Items.Strings = (
-            '00 - Tributada integralmente'
-            
-              '10 - Tributada e com cobran'#231'a do ICMS por substitui'#231#227'o tribut'#225'ri' +
-              'a'
-            '20 - Com redu'#231#227'o da BC'
-            
-              '30 - Isenta / n'#227'o tributada e com cobran'#231'a do ICMS por substitui' +
-              #231#227'o tribut'#225'ria'
-            '40 - Isenta'
-            '41 - N'#227'o tributada'
-            '50 - Com suspens'#227'o'
-            '51 - Com diferimento'
-            '60 - ICMS cobrado anteriormente por substitui'#231#227'o tribut'#225'ria'
-            
-              '70 - Com redu'#231#227'o da BC e cobran'#231'a do ICMS por substitui'#231#227'o tribu' +
-              't'#225'ria'
-            '90 - Outras'
-            '101 - Tributada pelo Simples Nacional com permiss'#227'o de cr'#233'dito'
-            '102 - Tributada pelo Simples Nacional sem permiss'#227'o de cr'#233'dito'
-            
-              '103 - Isen'#231#227'o do ICMS no Simples Nacional para faixa de receita ' +
-              'bruta'
-            
-              '201 - Tributada pelo Simples Nacional com permiss'#227'o de cr'#233'dito e' +
-              ' com cobran'#231'a do ICMS por substitui'#231#227'o tribut'#225'ria'
-            
-              '202 - Tributada pelo Simples Nacional sem permiss'#227'o de cr'#233'dito e' +
-              ' com cobran'#231'a do ICMS por substitui'#231#227'o tribut'#225'ria'
-            
-              '203 - Isen'#231#227'o do ICMS no Simples Nacional para faixa de receita ' +
-              'bruta e com cobran'#231'a do ICMS por substitui'#231#227'o tribut'#225'ria'
-            '300 - Imune'
-            '400 - N'#227'o tributada pelo Simples Nacional'
-            
-              '500 - ICMS cobrado anteriormente por substitui'#231#227'o tribut'#225'ria (su' +
-              'bstitu'#237'do) ou por antecipa'#231#227'o'
-            '900 - Outros')
-        end
-        object cbx_CST_PIS: TComboBox
-          Left = 24
-          Top = 302
-          Width = 409
-          Height = 31
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -17
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ItemIndex = 0
-          ParentFont = False
-          TabOrder = 4
-          Text = '01 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota B'#225'sica'
-          Items.Strings = (
-            '01 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota B'#225'sica'
-            '02 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota Diferenciada'
-            
-              '03 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota por Unidade de Medida de P' +
-              'roduto'
-            '04 - Opera'#231#227'o Tribut'#225'vel Monof'#225'sica '#8211' Revenda a Al'#237'quota Zero'
-            '05 - Opera'#231#227'o Tribut'#225'vel por Substitui'#231#227'o Tribut'#225'ria'
-            '06 - Opera'#231#227'o Tribut'#225'vel a Al'#237'quota Zero'
-            '07 - Opera'#231#227'o Isenta da Contribui'#231#227'o'
-            '08 - Opera'#231#227'o sem Incid'#234'ncia da Contribui'#231#227'o'
-            '09 - Opera'#231#227'o com Suspens'#227'o da Contribui'#231#227'o'
-            '49 - Outras Opera'#231#245'es de Sa'#237'da')
-        end
-        object cbx_CST_COFINS: TComboBox
-          Left = 439
-          Top = 302
-          Width = 402
-          Height = 31
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -17
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ItemIndex = 0
-          ParentFont = False
-          TabOrder = 5
-          Text = '01 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota B'#225'sica'
-          Items.Strings = (
-            '01 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota B'#225'sica'
-            '02 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota Diferenciada'
-            
-              '03 - Opera'#231#227'o Tribut'#225'vel com Al'#237'quota por Unidade de Medida de P' +
-              'roduto'
-            '04 - Opera'#231#227'o Tribut'#225'vel Monof'#225'sica '#8211' Revenda a Al'#237'quota Zero'
-            '05 - Opera'#231#227'o Tribut'#225'vel por Substitui'#231#227'o Tribut'#225'ria'
-            '06 - Opera'#231#227'o Tribut'#225'vel a Al'#237'quota Zero'
-            '07 - Opera'#231#227'o Isenta da Contribui'#231#227'o'
-            '08 - Opera'#231#227'o sem Incid'#234'ncia da Contribui'#231#227'o'
-            '09 - Opera'#231#227'o com Suspens'#227'o da Contribui'#231#227'o'
-            '49 - Outras Opera'#231#245'es de Sa'#237'da')
-        end
-        object cbx_CST_IPI: TComboBox
-          Left = 439
-          Top = 226
-          Width = 402
-          Height = 31
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -17
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ItemIndex = 0
-          ParentFont = False
-          TabOrder = 3
-          Text = '50 - Sa'#237'da Tributada'
-          Items.Strings = (
-            '50 - Sa'#237'da Tributada'
-            '51 - Sa'#237'da Tribut'#225'vel com Al'#237'quota Zero'
-            '52 - Sa'#237'da Isenta'
-            '53 - Sa'#237'da N'#227'o Tributada'
-            '54 - Sa'#237'da Imune'
-            '55 - Sa'#237'da com Suspens'#227'o'
-            '99 - Outras Sa'#237'das')
-        end
-        object cxDBTextEdit1: TcxDBTextEdit
-          Left = 160
-          Top = 138
-          TabOrder = 13
-          Width = 165
-        end
-        object cxDBTextEdit2: TcxDBTextEdit
-          Left = 343
-          Top = 138
-          TabOrder = 14
-          Width = 165
-        end
-        object cxDBTextEdit3: TcxDBTextEdit
+        object lcbx_Cidades: TcxDBLookupComboBox
           Left = 528
-          Top = 138
-          TabOrder = 15
-          Width = 165
+          Top = 338
+          DataBinding.DataField = 'codigo_cidade'
+          DataBinding.DataSource = ds_Emitente
+          Properties.KeyFieldNames = 'codigo_cidade'
+          Properties.ListColumns = <
+            item
+              FieldName = 'nome_cidade'
+            end>
+          Properties.ListSource = ds_Cidades
+          TabOrder = 9
+          Width = 383
         end
-        object cxDBTextEdit4: TcxDBTextEdit
-          Left = 712
-          Top = 138
+        object edt_Senha: TcxDBTextEdit
+          Left = 426
+          Top = 444
+          DataBinding.DataField = 'senha_certificado'
+          DataBinding.DataSource = ds_Emitente
+          TabOrder = 10
+          Width = 485
+        end
+        object edt_Certificado: TcxDBButtonEdit
+          Left = 32
+          Top = 444
+          DataBinding.DataField = 'certificado'
+          DataBinding.DataSource = ds_Emitente
+          Properties.Buttons = <
+            item
+              Default = True
+              Kind = bkEllipsis
+            end>
+          TabOrder = 11
+          Width = 388
+        end
+        object edt_ID_CSC: TcxDBTextEdit
+          Left = 32
+          Top = 538
+          DataBinding.DataField = 'id_csc'
+          DataBinding.DataSource = ds_Emitente
+          TabOrder = 12
+          Width = 153
+        end
+        object ect_Token_CSC: TcxDBTextEdit
+          Left = 191
+          Top = 538
+          DataBinding.DataField = 'token_csc'
+          DataBinding.DataSource = ds_Emitente
+          TabOrder = 13
+          Width = 485
+        end
+        object edt_CNPJ_CPF: TcxDBMaskEdit
+          Left = 253
+          Top = 158
+          Cursor = crHandPoint
+          DataBinding.DataField = 'cnpj_cpf'
+          DataBinding.DataSource = ds_Emitente
+          TabOrder = 14
+          Width = 345
+        end
+        object edt_IE_RG: TcxDBMaskEdit
+          Left = 604
+          Top = 158
+          Cursor = crHandPoint
+          DataBinding.DataField = 'ie_rg'
+          DataBinding.DataSource = ds_Emitente
+          TabOrder = 15
+          Width = 307
+        end
+        object edt_CEP: TcxDBMaskEdit
+          Left = 32
+          Top = 250
+          Cursor = crHandPoint
+          DataBinding.DataField = 'cep'
+          DataBinding.DataSource = ds_Emitente
+          Properties.EditMask = '99999-999'
           TabOrder = 16
-          Width = 129
+          Width = 153
         end
       end
     end
   end
   object ds_Cidades: TDataSource
     DataSet = dm_ConexaoPG.qry_Cidades
-    Left = 908
-    Top = 305
+    Left = 594
+    Top = 49
+  end
+  object ds_Emitente: TDataSource
+    DataSet = dm_ConexaoPG.qry_Emitente
+    Left = 324
+    Top = 47
   end
   object ds_Estados: TDataSource
     DataSet = dm_ConexaoPG.qry_Estados
-    Left = 908
-    Top = 249
-  end
-  object ds_Produtos: TDataSource
-    DataSet = dm_ConexaoPG.qry_Produtos
-    Left = 324
-    Top = 47
+    Left = 516
+    Top = 49
   end
   object ImageList1: TImageList
     ColorDepth = cd32Bit
     DrawingStyle = dsTransparent
     Height = 32
     Width = 32
-    Left = 905
-    Top = 194
+    Left = 409
+    Top = 50
     Bitmap = {
       494C01010C001800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000008000000001002000000000000000

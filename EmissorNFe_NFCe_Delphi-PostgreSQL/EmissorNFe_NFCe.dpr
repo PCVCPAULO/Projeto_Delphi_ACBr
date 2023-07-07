@@ -8,7 +8,8 @@ uses
   EmissorNFe_NFCe.Views.CadTransportadora in 'Views\EmissorNFe_NFCe.Views.CadTransportadora.pas' {frm_Transport},
   EmissorNFe.Views.Frm_SelecionarCertificado in 'Views\EmissorNFe.Views.Frm_SelecionarCertificado.pas' {frmSelecionarCertificado},
   EmissorNFe_NFCe.Controller.FuncoesUtils in 'Controller\EmissorNFe_NFCe.Controller.FuncoesUtils.pas',
-  View.Produtos in 'Views\View.Produtos.pas' {frm_ViewProdutos};
+  View.Produtos in 'Views\View.Produtos.pas' {frm_ViewProdutos},
+  View.Emitente in 'Views\View.Emitente.pas' {frm_Emitente};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.CreateForm(Tdm_ConexaoPG, dm_ConexaoPG);
   Application.CreateForm(Tfrm_Principal, frm_Principal);
   Application.CreateForm(Tfrm_ViewProdutos, frm_ViewProdutos);
+  Application.CreateForm(Tfrm_Emitente, frm_Emitente);
   Application.Run;
 end.

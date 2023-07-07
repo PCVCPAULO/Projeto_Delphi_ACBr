@@ -293,5 +293,208 @@ object dm_ConexaoPG: Tdm_ConexaoPG
       Precision = 14
       Size = 2
     end
+    object qry_Produtosncm: TZUnicodeStringField
+      DisplayLabel = 'NCM'
+      FieldName = 'ncm'
+      Size = 8
+    end
+    object qry_Produtosgtin: TZUnicodeStringField
+      DisplayLabel = 'GTIN'
+      FieldName = 'gtin'
+      Size = 13
+    end
+    object qry_Produtoscfop: TZUnicodeStringField
+      DisplayLabel = 'CFOP'
+      FieldName = 'cfop'
+      Size = 4
+    end
+  end
+  object qry_Emitente: TZQuery
+    Connection = ConexaoPG
+    Active = True
+    SQL.Strings = (
+      'SELECT codigo,'
+      '  nome,'
+      #9'pessoa,'
+      #9'cnpj_cpf,'
+      #9'ie_rg,'
+      #9'endereco,'
+      #9'numero,'
+      #9'bairro,'
+      #9'complemento,'
+      #9'cep,'
+      #9'codigo_cidade,'
+      #9'nome_cidade,'
+      #9'codigo_uf,'
+      #9'nome_uf,'
+      #9'certificado,'
+      #9'senha_certificado,'
+      '  id_csc,'
+      '  token_csc'
+      'FROM tab_emitente'
+      'where 0 = 1')
+    Params = <>
+    Left = 560
+    Top = 144
+    object qry_Emitentecodigo: TZIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'codigo'
+      Required = True
+    end
+    object qry_Emitentenome: TZUnicodeStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'nome'
+      Size = 60
+    end
+    object qry_Emitentepessoa: TZUnicodeStringField
+      DisplayLabel = 'Pessoa'
+      FieldName = 'pessoa'
+      Size = 1
+    end
+    object qry_Emitentecnpj_cpf: TZUnicodeStringField
+      DisplayLabel = 'CNPJ_CPF'
+      FieldName = 'cnpj_cpf'
+    end
+    object qry_Emitenteie_rg: TZUnicodeStringField
+      DisplayLabel = 'IE_RG'
+      FieldName = 'ie_rg'
+      Size = 18
+    end
+    object qry_Emitenteendereco: TZUnicodeStringField
+      DisplayLabel = 'Endere'#231'o'
+      FieldName = 'endereco'
+      Size = 60
+    end
+    object qry_Emitentenumero: TZUnicodeStringField
+      DisplayLabel = 'N'#250'mero'
+      FieldName = 'numero'
+      Size = 10
+    end
+    object qry_Emitentebairro: TZUnicodeStringField
+      DisplayLabel = 'Bairro'
+      FieldName = 'bairro'
+      Size = 50
+    end
+    object qry_Emitentecomplemento: TZUnicodeStringField
+      DisplayLabel = 'Complemento'
+      FieldName = 'complemento'
+      Size = 40
+    end
+    object qry_Emitentecep: TZUnicodeStringField
+      DisplayLabel = 'CEP'
+      FieldName = 'cep'
+      Size = 9
+    end
+    object qry_Emitentecodigo_cidade: TZIntegerField
+      DisplayLabel = 'C'#243'd. Cidade'
+      FieldName = 'codigo_cidade'
+    end
+    object qry_Emitentenome_cidade: TZUnicodeStringField
+      DisplayLabel = 'Cidade'
+      FieldName = 'nome_cidade'
+      Size = 100
+    end
+    object qry_Emitentecodigo_uf: TZIntegerField
+      DisplayLabel = 'C'#243'd. UF'
+      FieldName = 'codigo_uf'
+    end
+    object qry_Emitentenome_uf: TZUnicodeStringField
+      DisplayLabel = 'UF'
+      FieldName = 'nome_uf'
+      Size = 2
+    end
+    object qry_Emitentecertificado: TZUnicodeStringField
+      DisplayLabel = 'Certificado'
+      FieldName = 'certificado'
+      Size = 150
+    end
+    object qry_Emitentesenha_certificado: TZUnicodeStringField
+      DisplayLabel = 'Senha'
+      FieldName = 'senha_certificado'
+    end
+    object qry_Emitenteid_csc: TZIntegerField
+      DisplayLabel = 'ID CSC'
+      FieldName = 'id_csc'
+    end
+    object qry_Emitentetoken_csc: TZUnicodeStringField
+      DisplayLabel = 'Token CSC'
+      FieldName = 'token_csc'
+      Size = 200
+    end
+  end
+  object qry_DadosEmitente: TZQuery
+    Connection = ConexaoPG
+    SQL.Strings = (
+      'SELECT * FROM tab_emitente where 0 = 1')
+    Params = <>
+    Left = 560
+    Top = 240
+    object qry_DadosEmitentecodigo: TZIntegerField
+      FieldName = 'codigo'
+      Required = True
+    end
+    object qry_DadosEmitentenome: TZUnicodeStringField
+      FieldName = 'nome'
+      Size = 60
+    end
+    object qry_DadosEmitentepessoa: TZUnicodeStringField
+      FieldName = 'pessoa'
+      Size = 1
+    end
+    object qry_DadosEmitentecnpj_cpf: TZUnicodeStringField
+      FieldName = 'cnpj_cpf'
+    end
+    object qry_DadosEmitenteie_rg: TZUnicodeStringField
+      FieldName = 'ie_rg'
+      Size = 18
+    end
+    object qry_DadosEmitenteendereco: TZUnicodeStringField
+      FieldName = 'endereco'
+      Size = 60
+    end
+    object qry_DadosEmitentenumero: TZUnicodeStringField
+      FieldName = 'numero'
+      Size = 10
+    end
+    object qry_DadosEmitentebairro: TZUnicodeStringField
+      FieldName = 'bairro'
+      Size = 50
+    end
+    object qry_DadosEmitentecomplemento: TZUnicodeStringField
+      FieldName = 'complemento'
+      Size = 40
+    end
+    object qry_DadosEmitentecep: TZUnicodeStringField
+      FieldName = 'cep'
+      Size = 9
+    end
+    object qry_DadosEmitentecodigo_cidade: TZIntegerField
+      FieldName = 'codigo_cidade'
+    end
+    object qry_DadosEmitentenome_cidade: TZUnicodeStringField
+      FieldName = 'nome_cidade'
+      Size = 100
+    end
+    object qry_DadosEmitentecodigo_uf: TZIntegerField
+      FieldName = 'codigo_uf'
+    end
+    object qry_DadosEmitentenome_uf: TZUnicodeStringField
+      FieldName = 'nome_uf'
+      Size = 2
+    end
+    object qry_DadosEmitentecertificado: TZUnicodeStringField
+      FieldName = 'certificado'
+      Size = 150
+    end
+    object qry_DadosEmitentesenha_certificado: TZUnicodeStringField
+      FieldName = 'senha_certificado'
+    end
+    object qry_DadosEmitenteid_csc: TZIntegerField
+      FieldName = 'id_csc'
+    end
+    object qry_DadosEmitentetoken_csc: TZUnicodeStringField
+      FieldName = 'token_csc'
+      Size = 200
+    end
   end
 end

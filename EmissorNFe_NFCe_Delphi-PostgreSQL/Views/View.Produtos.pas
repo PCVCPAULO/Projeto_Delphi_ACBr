@@ -68,7 +68,6 @@ type
     btnCancelar: TButton;
     cxDBSpinEdit1: TcxDBSpinEdit;
     edt_Descricao: TcxDBTextEdit;
-    dbs_Estoque: TcxDBSpinEdit;
     edt_Preco: TcxDBCurrencyEdit;
     edt_AliqiCMS: TcxDBCurrencyEdit;
     edt_AliPIS: TcxDBCurrencyEdit;
@@ -79,6 +78,13 @@ type
     cbx_CST_PIS: TComboBox;
     cbx_CST_COFINS: TComboBox;
     cbx_CST_IPI: TComboBox;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    cxDBTextEdit1: TcxDBTextEdit;
+    cxDBTextEdit2: TcxDBTextEdit;
+    cxDBTextEdit3: TcxDBTextEdit;
+    cxDBTextEdit4: TcxDBTextEdit;
     procedure btnAlterarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);

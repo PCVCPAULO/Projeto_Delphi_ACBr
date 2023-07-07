@@ -126,6 +126,10 @@
             <Form>frm_ViewProdutos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\View.Emitente.pas">
+            <Form>frm_Emitente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
